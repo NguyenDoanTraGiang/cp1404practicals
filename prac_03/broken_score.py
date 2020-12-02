@@ -1,6 +1,13 @@
+import random
+
+
 def main():
     score = float(input("Enter score: "))
     print(validate_score(score))
+
+    print("\nRandom score's result:")
+    random_number = random.randint(0, 100)
+    print(validate_score(random_number))
 
 
 def validate_score(score):
