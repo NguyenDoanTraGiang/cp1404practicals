@@ -10,7 +10,7 @@ for word in words:
     else:
         word_to_count[word] = 1
 
- """Finding the longest word"""
+"""Finding the longest word"""
 longest_length = 0
 for word in words:
     length = len(word)
