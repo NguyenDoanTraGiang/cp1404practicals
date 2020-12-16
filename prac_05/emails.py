@@ -20,7 +20,7 @@ def main():
 
         confirm_name = input("Is your name {}? (Y/n) ".format(email_to_name[email])).lower()
         if confirm_name == "" or confirm_name in "yes":
-            break
+            continue
         elif confirm_name in "no":
             new_name = input("Name: ").title()
             email_to_name[email] = new_name
