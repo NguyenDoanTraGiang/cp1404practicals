@@ -1,8 +1,14 @@
 def main():
     email_to_name = {}
+
     enter_blank = False
     while not enter_blank:
         email = input("Email: ")
+
+        if email == "":
+            enter_blank = True
+        else:
+            enter_blank = False
 
         username = email.split("@")
 
