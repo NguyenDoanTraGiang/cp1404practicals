@@ -8,7 +8,8 @@ def main():
         if email == "":
             enter_blank = True
         else:
-            enter_blank = False
+            for email, name in email_to_name.items():
+                print("{} ({})".format(email_to_name[name], email))
 
         username = email.split("@")
 
