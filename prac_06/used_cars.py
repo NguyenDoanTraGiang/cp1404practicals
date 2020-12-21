@@ -20,7 +20,7 @@ def main():
     print("Limo's fuel: {}".format(limo.fuel))
     limo.drive(115)
     print("Limo's odometer: {}".format(limo.odometer))
-
+    print(limo)
 
 
 main()
