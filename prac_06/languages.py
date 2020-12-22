@@ -7,3 +7,8 @@ visual_basic = ProgrammingLanguage("Visual Basic", "Static", False, 1991)
 print(ruby)
 print(python)
 print(visual_basic)
+
+class_objects = [ProgrammingLanguage.object_list(ruby), ProgrammingLanguage.object_list(python), ProgrammingLanguage.object_list(visual_basic)]
+print(class_objects)
+
+
