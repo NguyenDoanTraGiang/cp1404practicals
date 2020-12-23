@@ -1,4 +1,5 @@
 from prac_06.guitar import Guitar
+
 print("My guitars!")
 guitars = []
 
@@ -9,7 +10,6 @@ guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
 # User input
 name = input("Name: ")
 while not name == "":
-
     year = int(input("Year: "))
     cost = float(input("Cost: $"))
 
@@ -25,6 +25,5 @@ for i, guitar in enumerate(guitars):
         vintage_string = " (vintage)"
     else:
         vintage_string = ""
-    print("Guitar {}: {:>15} ({}), worth ${:10,.2f}{}".format(i + 1, guitar.name, guitar.year, guitar.cost, vintage_string))
-
-
+    print("Guitar {}: {:>15} ({}), worth ${:10,.2f}{}".format(i + 1, guitar.name, guitar.year, guitar.cost,
+                                                              vintage_string))
