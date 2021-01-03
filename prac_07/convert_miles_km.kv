@@ -7,6 +7,7 @@ BoxLayout:
             font_size: 48
             text: '34'
             size_hint_x: 3
+            on_text_validate: app.handle_convert()
         BoxLayout:
             orientation: 'vertical'
             Button:
@@ -18,8 +19,9 @@ BoxLayout:
     Button:
         text: 'Convert mi to km'
         font_size: 34
+        on_press: app.convert_mi_km(int(input_number.text))
     Label:
         id: output_label
         font_size: 48
-        text: '54.717'
+        text: app.default
         color: (1, 1, 0, 1)
