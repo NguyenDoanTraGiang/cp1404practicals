@@ -2,6 +2,8 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.app import StringProperty
 
+MILES_TO_KM = 1.609
+
 
 class MilesToKilometersApp(App):
     default = StringProperty()
@@ -14,7 +16,7 @@ class MilesToKilometersApp(App):
     def convert_mi_km(self):
         """Convert miles into kilometers"""
         miles = self.validate_miles()
-        kilometers = miles * 1.609
+        kilometers = miles * MILES_TO_KM
         self.root.ids.output_label.text = str(kilometers)
 
     def handle_convert(self):
@@ -32,5 +34,6 @@ class MilesToKilometersApp(App):
             return miles
         except ValueError:
             return 0
+
 
 MilesToKilometersApp().run()
