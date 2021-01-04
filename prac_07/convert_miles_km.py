@@ -19,6 +19,6 @@ class MilesToKilometersApp(App):
         self.default = self.root.ids.input_number.text
 
     def handle_increment(self, change):
-        self.root.ids.input_number.text = str(int(self.root.ids.input_number.text) + change)
+        self.root.ids.input_number.text = str(float(self.root.ids.input_number.text) + change)
 
 MilesToKilometersApp().run()
