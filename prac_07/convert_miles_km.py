@@ -11,7 +11,8 @@ class MilesToKilometersApp(App):
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
 
-    def convert_mi_km(self, miles):
+    def convert_mi_km(self):
+        miles = self.validate_miles()
         kilometers = miles * 1.609
         self.root.ids.output_label.text = str(kilometers)
 
@@ -19,6 +20,13 @@ class MilesToKilometersApp(App):
         self.default = self.root.ids.input_number.text
 
     def handle_increment(self, change):
-        self.root.ids.input_number.text = str(float(self.root.ids.input_number.text) + change)
+        self.root.ids.input_number.text = str(self.validate_miles() + change)
+
+    def validate_miles(self):
+        try:
+            miles = float(self.root.ids.input_number.text)
+            return miles
+        except ValueError:
+            return 0
 
 MilesToKilometersApp().run()
