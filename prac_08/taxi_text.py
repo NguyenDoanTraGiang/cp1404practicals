@@ -5,3 +5,5 @@ new_taxi.drive(40)
 print("Taxi's detail: {}\nTaxi's current fare: ${}".format(new_taxi, new_taxi.get_fare()))
 # Star new fare
 new_taxi.start_fare()
+new_taxi.drive(100)
+print("Taxi's detail: {}\nTaxi's current fare: ${}".format(new_taxi, new_taxi.get_fare()))
