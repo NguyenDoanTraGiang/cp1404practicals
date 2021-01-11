@@ -13,3 +13,6 @@ class SilverServiceTaxi(Taxi):
         # The base kilometer price depends on all Taxi's kilometer price
         # Base kilometer price multiple by fanciness
         self.price_per_km = Taxi.price_per_km * fanciness
+
+    def __str__(self):
+        return super().__str__() + " plus flagfall of {}".format(self.flagfall)
