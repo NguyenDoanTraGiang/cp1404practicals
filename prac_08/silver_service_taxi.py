@@ -2,7 +2,6 @@ from prac_08.taxi import Taxi
 
 
 class SilverServiceTaxi(Taxi):
-
     flagfall = 4.50
 
     """Special version of Taxi that include fanciness which influence kilometer price"""
