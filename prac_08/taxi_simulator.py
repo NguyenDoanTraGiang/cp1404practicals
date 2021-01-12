@@ -17,21 +17,32 @@ def main():
             print("Taxis available: ")
             for index, taxi in enumerate(taxis):
                 print("{} - {}".format(index, taxi))
-
             # Prompt user to choose a taxi
             chosen_taxi = int(input("Choose taxi: "))
             current_taxi = taxis[chosen_taxi]
-
             # Display bill to date
-            print("Bill to date: {}".format(bill_to_date))
+            print("Bill to date: ${:.2f}".format(bill_to_date))
 
         elif user_input == "d":
+            # User cannot proceed if no taxi is chosen
+            if current_taxi is None:
+                print("You haven't choose a taxi yet!")
             # Prompt the user to enter driven distance
+            current_taxi.start_fare()
+            distance = float(input("Drive how far? "))
+            current_taxi.drive(distance)
             # Display the cost of the trip
+            current_cost = current_taxi.get_fare()
+            print("Your {} trip cost you ${:.2f}".format(current_taxi.name, current_cost))
             # Display bill to date
-            pass
+            bill_to_date += current_cost
+            print("Bill to date: ${:.2f}".format(bill_to_date))
         else:
             print("Invalid choice")
+
+        # Prompt the user to choose the menu
+        print("q)uit, c)hoose taxi, d)rive")
+        user_input = input(">>> ").lower()
 
 
 if __name__ == "__main__":
