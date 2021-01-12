@@ -15,8 +15,7 @@ def main():
         if user_input == "c":
             # Display the taxis and their details
             print("Taxis available: ")
-            for index, taxi in enumerate(taxis):
-                print("{} - {}".format(index, taxi))
+            display_taxis(taxis)
             # Prompt user to choose a taxi
             chosen_taxi = int(input("Choose taxi: "))
             current_taxi = taxis[chosen_taxi]
@@ -40,9 +39,19 @@ def main():
         else:
             print("Invalid choice")
 
-        # Prompt the user to choose the menu
+        # Prompt the user to choose the menu again
         print("q)uit, c)hoose taxi, d)rive")
         user_input = input(">>> ").lower()
+
+    # Display when user choose quit
+    print("Total trip cost: ${:.2f}".format(bill_to_date))
+    print("Taxi are now: ")
+    display_taxis(taxis)
+
+
+def display_taxis(taxis):
+    for index, taxi in enumerate(taxis):
+        print("{} - {}".format(index, taxi))
 
 
 if __name__ == "__main__":
