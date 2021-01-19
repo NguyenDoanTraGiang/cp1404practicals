@@ -65,6 +65,5 @@ def demo_walk():
             os.rename(source, destination)
 
 
-
-#main()
+# main()
 demo_walk()
