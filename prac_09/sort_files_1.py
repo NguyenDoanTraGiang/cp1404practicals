@@ -8,22 +8,21 @@ def main():
     os.chdir('FilesToSort')
     # Print all file in current directory
     print("All file in current directory is {}".format(os.listdir('.')))
-    # Create a list for all file types
-    file_types = []
+
     for filename in os.listdir('.'):
+        # Ignore directories
+        if os.path.isdir(filename):
+            continue
         # Separate file name from file type
         names_and_types = filename.split('.')
-        # Store file type in the types list
-        if names_and_types[1] not in file_types:
-            file_types.append(names_and_types[1])
-        else:
-            pass
-
-    for file_type in file_types:
+        # Create directories based on file types
         try:
-            os.mkdir(file_type)
+            os.mkdir(names_and_types[1])
         except FileExistsError:
             pass
+
+        # Move files to subdirectories
+        shutil.move(filename, names_and_types[1])
 
 
 main()
