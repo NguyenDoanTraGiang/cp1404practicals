@@ -10,7 +10,7 @@ def main():
     print("All file in current directory is {}".format(os.listdir('.')))
 
     extension_to_category = {}
-    mention_category = []  # List to avoid repetition
+    mention_extension = []  # List to avoid repetition
     for file_name in os.listdir('.'):
         # Ignore directories
         if os.path.isdir(file_name):
@@ -19,19 +19,21 @@ def main():
         names_and_types = file_name.split('.')
 
         # Create a dictionary with file extensions as keys
-        user_category = input("What category would you like to sort {} files into? ".format(names_and_types[1]))
-        # Add file extension into a list to avoid repetition
-        extension_to_category[names_and_types[1]] = user_category
-        print(extension_to_category)
+        if names_and_types[1] not in mention_extension:
+            user_category = input("What category would you like to sort {} files into? ".format(names_and_types[1]))
+            # Add file extension into a list to avoid repetition
+            mention_extension.append(names_and_types[1])
+            extension_to_category[names_and_types[1]] = user_category
+            print(extension_to_category)
 
         try:
             # Create subdirectories based on categories
-            os.mkdir(user_category)
+            os.mkdir(extension_to_category[names_and_types[1]])
         except FileExistsError:
             pass
 
         # Move file based on file extension and chosen categories
-        shutil.move(file_name, user_category)
+        shutil.move(file_name, extension_to_category[names_and_types[1]])
 
 
 main()
