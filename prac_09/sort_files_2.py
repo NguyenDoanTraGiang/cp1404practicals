@@ -18,5 +18,12 @@ def main():
         # Separate file name from file type
         names_and_types = file_name.split('.')
 
+        if names_and_types[1] not in mention_category:
+            # Create a dictionary with file extensions as keys
+            user_category = input("What category would you like to sort {} files into? ".format(names_and_types[1]))
+            # Add file extension into a list to avoid repetition
+            mention_category.append(names_and_types[1])
+            category_to_extension[names_and_types[1]] = user_category
+
 
 main()
