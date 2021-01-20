@@ -24,7 +24,6 @@ def main():
             # Add file extension into a list to avoid repetition
             mention_extension.append(names_and_types[1])
             extension_to_category[names_and_types[1]] = user_category
-            print(extension_to_category)
 
         try:
             # Create subdirectories based on categories
@@ -37,4 +36,3 @@ def main():
 
 
 main()
-
