@@ -24,6 +24,15 @@ def main():
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
     new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
+    for index, character in enumerate(new_name):
+        if new_name[index-1].islower() is True:
+            if new_name[index].isupper() is True:
+                new_name = new_name[:index] + "_" + new_name[index:]
+            else:
+                pass
+        else:
+            pass
+    return new_name
 
 
 main()
