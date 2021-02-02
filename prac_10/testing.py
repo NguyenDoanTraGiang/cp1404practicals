@@ -53,11 +53,11 @@ def run_tests():
 
 run_tests()
 
-# TODO: 3. Uncomment the following line and run the doctests
+# 3. Uncomment the following line and run the doctests
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
 doctest.testmod()
 
-# TODO: 4. Fix the failing is_long_word function
+# 4. Fix the failing is_long_word function
 # (don't change the tests, change the function!)
 
 # TODO: 5. Write and test a function to format a phrase as a sentence,
@@ -69,3 +69,20 @@ doctest.testmod()
 # and one more you decide (one that is valid!)
 # test this and watch the tests fail
 # then write the body of the function so that the tests pass
+
+
+def change_to_sentence(phrase):
+    """Test to see if the function works
+    >>> change_to_sentence("hello")
+    'Hello.'
+    >>> change_to_sentence("It is an ex parrot.")
+    'It is an ex parrot.'
+    >>> change_to_sentence("Hello")
+    'Hello.'
+    """
+    words = phrase.split()  # make list of words in phrase
+    words[0] = words[0].title()
+    sentence = " ".join(words)
+    if sentence[-1] != ".":
+        sentence = sentence + "."
+    return sentence
